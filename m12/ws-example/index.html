@@ -6,6 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>WebSocket</title>
   </head>
-  <script></script>
-  <body></body>
+
+  <body>
+    <script>
+      const ws = new WebSocket("ws://localhost:8080");
+      ws.onmessage = (e) => {
+        const msg = document.createElement("p");
+        msg.innerText = e.data;
+        document.body.appendChild(msg);
+      };
+    </script>
+  </body>
 </html>
